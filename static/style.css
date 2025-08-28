@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=MS+Gothic&family=Courier+New:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MS Gothic', 'Courier New', monospace;
+    background: #bbacd8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+h1 {
+    background: #f5f1e8;
+    border: 2px solid #8b7355;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a3728;
+    margin-bottom: 30px;
+    box-shadow: 
+        inset -1px -1px 0 #6d5a42,
+        inset 1px 1px 0 #ffffff,
+        4px 4px 0 #9d8b73;
+    position: relative;
+    z-index: 1;
+}
+
+form {
+    background: #f5f1e8;
+    border: 2px solid #8b7355;
+    border-radius: 12px;
+    width: 420px;
+    max-width: 90vw;
+    padding: 50px 25px 25px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 
+        inset -1px -1px 0 #6d5a42,
+        inset 1px 1px 0 #ffffff,
+        4px 4px 0 #9d8b73;
+}
+
+form::before,
+.result::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    border-radius: 10px 10px 0 0;
+}
+
+form::before {
+    background: linear-gradient(to bottom, #d4c4a8, #c4b49d);
+    border-bottom: 1px solid #8b7355;
+}
+
+.result::before {
+    background: linear-gradient(to bottom, #ff9f5a, #ff8c42);
+    border-bottom: 1px solid #cc6e29;
+}
+
+form::after,
+.result::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+    background: #ff5f57;
+    border-radius: 50%;
+    box-shadow: 
+        20px 0 0 #ffbd2e,
+        40px 0 0 #28ca42,
+        inset 0 1px 0 rgba(255,255,255,0.2),
+        20px 0 0 inset 0 1px 0 rgba(255,255,255,0.2),
+        40px 0 0 inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+form .window-title,
+.result .window-title {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+form .window-title {
+    color: #4a3728;
+}
+
+.result .window-title {
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #8b7355;
+    border-radius: 8px;
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    margin-bottom: 15px;
+    box-shadow: 
+        inset 1px 1px 0 #6d5a42,
+        inset -1px -1px 0 #ffffff;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    background: #fffef8;
+}
+
+button[type="submit"] {
+    background: linear-gradient(to bottom, #ff9f5a, #ff8c42);
+    border: 2px solid #cc6e29;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: inherit;
+    color: #fff;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+    box-shadow: 
+        inset -1px -1px 0 #cc6e29,
+        inset 1px 1px 0 #ffb366,
+        2px 2px 0 #9d8b73;
+    text-transform: uppercase;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to bottom, #ff8c42, #ff7a29);
+}
+
+.result {
+    background: #fff;
+    border: 2px solid #8b7355;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90vw;
+    padding: 55px 20px 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+    box-shadow: 
+        inset -1px -1px 0 #6d5a42,
+        inset 1px 1px 0 #ffffff,
+        4px 4px 0 #9d8b73;
+}
+
+.spam {
+    color: #d63384;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.spam::before {
+    content: '🚨 ';
+}
+
+.ham {
+    color: #198754;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ham::before {
+    content: '✅ ';
+}

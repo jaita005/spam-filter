@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam Filter Bot</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>🖂 Spam Filter Bot</h1>
+
+    <!-- Form Window -->
+    <form action="/predict" method="POST">
+        <div class="window-title">Message Analyzer</div>
+        <input type="text" name="message" placeholder="Enter your message" required>
+        <button type="submit">Check</button>
+    </form>
+
+    <!-- Result Window -->
+    {% if prediction %}
+        <div class="result">
+            <div class="window-title">Result</div>
+            <p><strong>Message:</strong> {{ message }}</p>
+            <p><strong>Prediction:</strong>
+                <span class="{{ 'spam' if prediction=='spam' else 'ham' }}">
+                    {{ prediction | capitalize }}
+                </span>
+            </p>
+        </div>
+    {% endif %}
+</body>
+</html>
